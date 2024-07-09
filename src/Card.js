@@ -12,13 +12,16 @@ const Card = ({ uuId, imageUrl, profileImage, userName, category, title }) => {c
                 <img src={imageUrl} alt={title} className="card-image" />
 
                 {isHovered && (
+
                     <>
+
                         <div className="card-category">{category}<img src = 'drop-down-25.svg' alt ='drop down icon'/></div>
                         <button className="save-button">Save</button>
                         <button className="share-button"><img src = 'share-icon.svg' alt ='Share icon'/></button>
                         <button className="more-options-button"><img src = 'three-dots-more-indicator.svg' alt ='More options icon'/></button>
 
                     </>
+
                 )}
 
             </div>
@@ -26,8 +29,10 @@ const Card = ({ uuId, imageUrl, profileImage, userName, category, title }) => {c
             <div className="card-title">{title}</div>
 
             <div className="card-info">
+
                 <img className="profile-image" src={profileImage} alt={userName} />
                 <span className="user-name">{userName}</span>
+                
             </div>
         </div>
     );
