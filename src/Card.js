@@ -1,33 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./style.css";
 
-const Card = ({uuID,imageUrl,profileImage,profileName,Category,Title}) =>
-{
-
-    const [isHovered, setIsHovered] = useState(false);
+const Card = ({ uuId, imageUrl, profileImage, userName, category, title }) => {const [isHovered, setIsHovered] = useState(false);
 
     return (
 
-        <div className='card' onMouseEnter={ setIsHovered(true)} onMouseLeave={setIsHovered(false)}>
+        <div className="card-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
 
-            <img src={imageUrl} alt = {Title}/>
+            <div className="card-box">
 
-            <div className='card-Info'>
+                <img src={imageUrl} alt={title} className="card-image" />
 
-                <img className='profile-Image' src = {profileImage} alt = {profileName}/>
+                {isHovered && (
+                    <>
+                        <div className="card-category">{category}<img src = 'drop-down-25.svg' alt ='drop down icon'/></div>
+                        <button className="save-button">Save</button>
+                        <button className="share-button"><img src = 'share-icon.svg' alt ='Share icon'/></button>
+                        <button className="more-options-button"><img src = 'three-dots-more-indicator.svg' alt ='More options icon'/></button>
 
-                <span className="profile-name">{profileName}</span>
+                    </>
+                )}
 
             </div>
 
             <div className="card-title">{title}</div>
 
-            {isHovered && <div className="card-category">{category}</div>}
-
+            <div className="card-info">
+                <img className="profile-image" src={profileImage} alt={userName} />
+                <span className="user-name">{userName}</span>
+            </div>
         </div>
-
     );
-
 };
-
 
 export default Card;
