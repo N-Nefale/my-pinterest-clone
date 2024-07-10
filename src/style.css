@@ -37,6 +37,27 @@ body {
 
 }
 
+.header img {
+
+    height: 20px;
+
+}
+
+.Home-button {
+
+    margin: 10px;
+
+    top: 20px;
+    right: 20px;
+    border-radius: 30px;
+    height: 30px;
+    width: 80px;
+    border: 0cap;
+    background-color: black;
+    color: white;
+
+}
+
 .app {
 
     padding: 100px 5px 5px;
@@ -53,11 +74,13 @@ body {
 
 }
 
-.card-grid .card-container {
+.card-container {
 
     box-sizing: border-box;
     width: 250px;
-    height: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
@@ -69,20 +92,28 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    height: 400px;
-    width: 220px;
+    width: 100%;
+    overflow: hidden;
 
 }
 
 .card-category {
 
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 8px;
     display: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
 }
 
@@ -92,18 +123,19 @@ body {
 
 }
 
-.card-container .card-image {
+.card-image {
 
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 8px;
 
 }
 
 .card-info {
 
-    padding-top: 20px;
+    padding-top: 10px;
+    text-align: center;
 
 }
 
@@ -121,8 +153,7 @@ body {
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
-    background-color: black;
-
+    
 }
 
 .profile-name {
@@ -133,51 +164,41 @@ body {
 }
 
 .card-title {
-
     font-size: 16px;
-
+    text-align: center;
 }
 
-.card-category {
-
+.card-category-title {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-
+    top: 20px;
+    left: 20px;
 }
 
 .card-category img {
-
     height: 20px;
     width: auto;
-
 }
 
-.save-button,.share-button,.more-options-button {
-
+.save-button,
+.share-button,
+.more-options-button {
     position: absolute;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
-
 }
 
 .save-button {
-
     top: 20px;
     right: 20px;
     border-radius: 20%;
     height: 30px;
     background-color: red;
     color: white;
-
 }
+
 .share-button {
     position: absolute;
     bottom: 15px;
@@ -194,15 +215,11 @@ body {
 }
 
 .share-button img {
-
     height: auto;
     width: 15px;
-
 }
 
-
 .more-options-button {
-
     position: absolute;
     bottom: 15px;
     right: 20px;
@@ -216,42 +233,44 @@ body {
     justify-content: center;
     padding: 0;
     text-size-adjust: 50;
-
 }
 
 .more-options-button img {
-
     height: auto;
     width: 15px;
-
 }
 
 @media (max-width: 1200px) {
-
     .header input {
         width: 250px;
     }
 
+    .card-container {
+        width: 200px;
+    }
+
+    .app {
+        padding: 100px 5px 5px;
+    }
 }
 
 @media (max-width: 992px) {
-
     .header input {
         width: 200px;
     }
 
+    .card-container {
+        width: 180px;
+    }
 }
 
 @media (max-width: 768px) {
-
     .header input {
         width: 150px;
     }
-
 }
 
 @media (max-width: 600px) {
-
     .header {
         flex-direction: column;
         align-items: flex-start;
@@ -263,4 +282,18 @@ body {
         box-sizing: border-box;
     }
 
+    .card-category-title {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+    }
+
+    .save-button {
+        top: 15px;
+        right: 10px;
+    }
+
+    .app {
+        padding: 180px 5px 5px;
+    }
 }
